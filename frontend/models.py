@@ -6,14 +6,14 @@ from PIL import Image
 import numpy as np
 from io import BytesIO
 
-from tensorflow.keras import backend
+from tensorflow.compat.v1.keras import backend
 
 graph = Graph()
 with graph.as_default():
     session = Session()
     with session.as_default():
 
-        model = load_model('model/model.h5')
+        model = load_model('model/model2.h5')
         model.compile(loss='categorical_crossentropy',
                     optimizer='RMSProp',
                     metrics=['accuracy'])
@@ -24,7 +24,7 @@ def predict(request):
     try:
 
         image = Image.open(BytesIO(request.body))
-        image = image.resize((224, 224))
+        image = image.resize((100, 100))
         image = np.array(image)[:, :, :3]
         image = image.reshape(1, *image.shape) / 255
         
@@ -44,5 +44,6 @@ def predict(request):
         ))
         
         return JsonResponse(labeled_predictions)
-    except:
+    except Exception as e:
+        print(e)
         return HttpResponse(status=500)

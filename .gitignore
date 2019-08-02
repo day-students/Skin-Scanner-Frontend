@@ -1,4 +1,5 @@
-model/model.h5
+model/*.h5
+
 
 Lib/
 Scripts/

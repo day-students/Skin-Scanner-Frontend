@@ -3,3 +3,4 @@ model/model.h5
 Lib/
 Scripts/
 Include/
+pyenv.cfg

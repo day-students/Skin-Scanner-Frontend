@@ -3,6 +3,7 @@
     <head>
         <title>Skin Scanner</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
@@ -19,11 +20,11 @@
         <main>
             <div class="center-wrapper">
                 <form action="#">
-                    {% csrf_token %}
-                    <label for="file">Upload Image:</label> <input type="file" id="file" name="file" accept="image/*" onchange="updatePreview()" value="Take a picture!">
-                    <img id="preview">
+                {% csrf_token %}
+                <label for="file">Upload Image:</label> <input type="file" id="file" name="file" accept="image/*" onchange="updatePreview()" value="Take a picture!">
+                <img id="preview">
                 </form>
-                <button onclick="predict()" id="submit">Submit</button>
+                <button onclick="predict()" id="submit">Predict</button>
                 <div id="info">
 
                 </div>
@@ -47,6 +48,9 @@
                             <li>Be white</li>
                         </ul>
                     </p>
+                    <p>
+                        Feel free to scan random objects and see what results you get!
+                    </p>
                 </section>
             </div>
         </main>
@@ -63,6 +67,5 @@
             </div>
         </div>
         <div id="shadow"></div>
-        <div></div>
     </body>
 </html>
