@@ -1,0 +1,120 @@
+body {
+    font-size: 1em;
+    margin: 0;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.center-wrapper {
+    display: block;
+    max-width: 40em;
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, footer, #shadow {
+    overflow: hidden;
+    background-color: #4472c4;
+    color: #ffffff;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0.5em 0.5em -0.5em #00000050;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+form {
+    margin: 0;
+}
+
+#preview {
+    display: none;
+    max-height: 25em;
+    margin: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    #file, #submit {
+        width: 100%;
+    }
+}
+
+#file, #submit {
+    display: block;
+    background-color: #669efd;
+    color: #000000;
+}
+
+label {
+    font-size: 1em;
+}
+
+#file {
+    padding: 0.75em;
+}
+
+#submit {
+    padding: 1em;
+    border: 0px;
+    font-size: 1.5em;
+}
+
+form {
+    margin-bottom: 2em;
+}
+
+#info {
+    display: none;
+    background-color: #ffffbb;
+    padding: 2em;
+    margin: 0.5em 0;
+}
+
+#info h2 {
+    margin-top: 0;
+}
+
+a#resp {
+    display: none;
+    background-color: #bbffbb;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+footer {
+    box-shadow: 0 -0.5em 0.5em -0.5em #00000050;
+}
+
+#shadow {
+    box-shadow: 0 50vh 0 50vh #4472c4;
+}
+
+#ad {
+    background-color: #000000e0;
+    vertical-align: middle;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 5em;
+
+    z-index: 2;
+}
+
+#ad div {
+    display: inline;
+}

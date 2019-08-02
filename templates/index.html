@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Skin Scanner</title>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+        <script src="{% static 'js/main.js' %}"></script>
+    </head>
+    <body>
+        <header>
+            <div class="center-wrapper">
+                <h1>
+                    Skin Scanner
+                </h1>
+            </div>
+        </header>
+        <main>
+            <div class="center-wrapper">
+                <form action="#">
+                    {% csrf_token %}
+                    <label for="file">Upload Image:</label> <input type="file" id="file" name="file" accept="image/*" onchange="updatePreview()" value="Take a picture!">
+                    <img id="preview">
+                </form>
+                <button onclick="predict()" id="submit">Submit</button>
+                <div id="info">
+
+                </div>
+
+                <hr>    
+
+                <section>
+                    <h2>About Skin Scanner</h2>
+                    <p>
+                        Skin Scanner can determine your exact time of death using a single photo of skin. How? Hint: Look behind you.
+                    </p>
+                    <p>
+                        For best results:
+                        <ul>
+                            <li>Make sure your skin is well-lit</li>
+                            <li>Get a direct angle on your skin</li>
+                            <li>Center the diseased patch of skin</li>
+                            <li>Cover as much surface with the diseased skin as possible</li>
+                            <li>Use a solid-color background</li>
+                            <li>Watermark your photo with DermNet</li>
+                            <li>Be white</li>
+                        </ul>
+                    </p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="center-wrapper">
+                <p>u dumb</p>
+                <p>I can't believe you're consulting a website instead of a doctor for eczema, psoriasis, and tinea. You should be ashamed for trusting some random high-school kids instead of your doctor, who has put countless hours slaving away at textbooks for a medical degree, which they got just for you. You are a disgrace to the entire human race, below even the soulless person typing this out.</p>
+            </div>
+        </footer>
+        <div id="ad" style="display: none;">
+            <div>
+                <img src="{% static 'images/ants-2.jpg' %}">
+                <p id="adp">HOT ANTS IN YOUR AREA</p>
+            </div>
+        </div>
+        <div id="shadow"></div>
+        <div></div>
+    </body>
+</html>
