@@ -4,3 +4,5 @@ Lib/
 Scripts/
 Include/
 pyenv.cfg
+
+**/__pycache__
